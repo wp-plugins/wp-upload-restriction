@@ -4,7 +4,7 @@
   Plugin Name: WP Upload Restriction
   Plugin URI: https://wordpress.org/plugins/wp-upload-restriction/
   Description: This plugin allow users to upload files of selected types.
-  Version: 1.0.0
+  Version: 1.0.1
   Author: msh134
   Author URI: http://www.sajjadhossain.com
  */
@@ -17,24 +17,24 @@ class WPUploadRestriction {
      * Constructor
      */
     public function __construct() {
-        $this->add_actions();
-        $this->add_filters();
+        $this->addActions();
+        $this->addFilters();
     }
 
     /**
      * Adds actions
      */
-    private function add_actions() {
+    private function addActions() {
         add_action('init', array($this, 'init'));
-        add_action('admin_menu', array($this, 'add_admin_menu'));
+        add_action('admin_menu', array($this, 'addAdminMenu'));
     }
 
     /**
      * Adds filters
      */
-    private function add_filters() {
-        add_filter('plugin_action_links', array($this, 'add_settings_link'), 10, 2);
-        add_filter('upload_mimes', array($this, 'restict_mime'), 10, 1);
+    private function addFilters() {
+        add_filter('plugin_action_links', array($this, 'addSettingsLink'), 10, 2);
+        add_filter('upload_mimes', array($this, 'restictMimes'), 10, 1);
     }
 
     /**
@@ -51,7 +51,7 @@ class WPUploadRestriction {
      * @param array $mimes
      * @return array
      */
-    function restict_mime($mimes) {
+    function restictMimes($mimes) {
         $user = wp_get_current_user();
 
         if ($this->hasRole($user, 'administrator')) {
@@ -81,7 +81,7 @@ class WPUploadRestriction {
     /**
      * Add a submenu for settings page under Settings menu
      */
-    public function add_admin_menu() {
+    public function addAdminMenu() {
         add_submenu_page('options-general.php', 'WP Upload Restriction', 'WP Upload Restriction', 'manage_options', 'wp-upload-restriction/settings.php');
     }
 
@@ -92,7 +92,7 @@ class WPUploadRestriction {
      * @param string $file
      * @return array
      */
-    public function add_settings_link($links, $file) {
+    public function addSettingsLink($links, $file) {
 
         if (is_null($this->plugin_name)) {
             $this->plugin_name = plugin_basename(__FILE__);
@@ -162,6 +162,7 @@ class WPUploadRestriction {
     public function getWPSupportedMimeTypes() {
         $wp_mime_types = wp_get_mime_types();
         unset($wp_mime_types['swf'], $wp_mime_types['exe']);
+        ksort($wp_mime_types);
         return $wp_mime_types;
     }
 

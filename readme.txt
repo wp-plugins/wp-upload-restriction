@@ -2,8 +2,8 @@
 Contributors: msh134
 Tags: upload, media, developer tool
 Requires at least: 2.2.3
-Tested up to: 4.1.1
-Stable tag: 1.0.0
+Tested up to: 4.1.2
+Stable tag: 1.0.1
 License: GPLv2 or later
 
 This plugin allows user to upload files of selected types.
