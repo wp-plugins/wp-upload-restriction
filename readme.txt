@@ -2,7 +2,7 @@
 Contributors: msh134
 Tags: upload, media, developer tool
 Requires at least: 2.2.3
-Tested up to: 4.1.2
+Tested up to: 4.2.2
 Stable tag: 2.0.0
 License: GPLv2 or later
 
