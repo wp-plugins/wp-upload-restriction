@@ -3,18 +3,16 @@ Contributors: msh134
 Tags: upload, media, developer tool
 Requires at least: 2.2.3
 Tested up to: 4.1.2
-Stable tag: 1.0.1
+Stable tag: 2.0.0
 License: GPLv2 or later
 
-This plugin allows user to upload files of selected types.
+This plugin restricts different role users from uploading files of selected types.
 
 == Description ==
 
-This plugin allows user to upload files of certain types selected by the administrator. Using this plugin you may restrict users from uploading unwanted files using the WordPress file uploader. It is very simple to use.
+This plugin allows users to upload files of certain types selected by the administrator. Administrator can select the file types by user role. This plugin restricts users from uploading unwanted files using the WordPress file uploader. 
 
-To return back to WordPress's default selection, just deactivate the plugin.
-
-Currently this upload restriction is applied for all users except Administrators. In future release role wise restrictions will be given.
+It is very simple to use. You will be able give permission role wise. To restore WordPress's default selection, just deactivate the plugin.
 
 Any issue? Contact me (http://sajjadhossain.com/contact-me/).
 
@@ -32,3 +30,5 @@ To return back to WordPress's default selection, just deactivate the plugin.
 1. Settings page
 
 == Changelog ==
+= 2.0.0 =
+* Restructured the plugin to add role wise restriction.
